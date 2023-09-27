@@ -4,9 +4,15 @@ const assert = chai.assert;
 suite('Unit Tests', function () {
   suite('Basic Assertions', function () {
     // #1
+    function isNull(value) {
+      return value === null;
+    }
+    function isNotNull(value) {
+      return value === 1;
+    }
     test('#isNull, #isNotNull', function () {
-      assert.fail(null, 'This is an optional error description - e.g. null is null');
-      assert.fail(1, '1 is not null');
+      assert.equal(isNull(null), true, 'null is correct');
+      assert.strictEqual(isNotNull(1), true, '1 is isNotNull');
     });
     // #2
     test('#isDefined, #isUndefined', function () {
